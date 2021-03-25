@@ -7,6 +7,7 @@
     <modules>
         <module>zuul-gateway</module>
         <module>eureka-client-demo</module>
+        <module>gateway</module>
     </modules>
 
     <parent>

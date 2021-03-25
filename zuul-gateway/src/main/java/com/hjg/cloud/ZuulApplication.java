@@ -15,6 +15,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @SpringBootApplication
 public class ZuulApplication {
 
+    //访问http://localhost:8989/mybooks/hello?name=James
     public static void main(String[] args) {
         SpringApplication.run(ZuulApplication.class, args);
     }
