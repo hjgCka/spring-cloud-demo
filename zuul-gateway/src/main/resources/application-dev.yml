@@ -1,0 +1,14 @@
+server:
+  port: 8989
+
+#忽略所有的路由，除了/myusers/*
+#这个路由，没有进行断路保护，查看文档进行更复杂配置
+zuul:
+  ignoredServices: '*'
+  routes:
+    books:
+      path: /mybooks/**
+      serviceId: eureka-client
+    users:
+      path: /myusers/**
+      serviceId: eureka-client

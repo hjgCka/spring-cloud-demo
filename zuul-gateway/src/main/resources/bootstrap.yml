@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+  system:
+    name: cloud-demo
+  application:
+    name: zuul-app
+
+eureka:
+  client:
+    serviceUrl:
+      # --以程序启动参数方式传入
+      #defaultZone:  http://eureka-server-1:8761/eureka/,http://eureka-server-2:8761/eureka/
+      defaultZone: http://10.153.61.38:8735/eureka/,http://10.153.61.38:8569/eureka/
+      #defaultZone: http://192.168.1.100:8761/eureka/
+  instance:
+    #使用IP注册服务
+    prefer-ip-address: true
+    #hostname: 192.168.1.102
+    #设置实例的ID
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+    #instance-id: 192.168.3.243:${spring.application.name}:${server.port}
+    #表示eureka client发送心跳给server端的时间间隔
+    lease-renewal-interval-in-seconds: 5
+    #表示eureka server收到client的心跳之后，在这个时间内若没收到下一次心跳，则将移除该服务。
+    lease-expiration-duration-in-seconds: 10
