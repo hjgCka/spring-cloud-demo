@@ -17,7 +17,7 @@ eureka:
     #使用IP注册服务
     prefer-ip-address: true
     #hostname: 192.168.1.102
-    #设置实例的ID
+    #设置实例的ID，这个属性存在于spring-cloud-commons包的HostInfoEnvironmentPostProcessor中
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
     #instance-id: 192.168.3.243:${spring.application.name}:${server.port}
     #表示eureka client发送心跳给server端的时间间隔
