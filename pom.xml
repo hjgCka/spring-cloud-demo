@@ -6,8 +6,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>zuul-gateway</module>
-        <module>eureka-client-demo</module>
+        <module>eureka-client-provider</module>
         <module>gateway</module>
+        <module>eureka-server-demo</module>
+        <module>eureka-client-invoker</module>
     </modules>
 
     <parent>
