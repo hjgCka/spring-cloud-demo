@@ -10,6 +10,7 @@
         <module>gateway</module>
         <module>eureka-server-demo</module>
         <module>eureka-client-invoker</module>
+        <module>eureka-server-replica</module>
     </modules>
 
     <parent>

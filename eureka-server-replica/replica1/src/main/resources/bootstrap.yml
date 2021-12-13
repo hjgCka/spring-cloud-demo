@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    #这个属性很重要，用作服务名 service ID
+    name: eureka-replica1
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://127.0.0.1:8002/eureka/
+  server:
+    enable-self-preservation: false
