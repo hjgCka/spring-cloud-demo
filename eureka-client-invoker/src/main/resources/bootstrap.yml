@@ -9,4 +9,8 @@ eureka:
     service-url:
       defaultZone: http://localhost:8088/eureka/
   instance:
-    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+    #使用IP注册服务，status列的链接悬浮上去也会是ip + port
+    prefer-ip-address: true
+    #这也是spring cloud eureka的默认配置，值为LAPTOP-T8IK1VLR:invoker:8082
+    #但是status page显示地址是ip + port，可以查看Status Page and Health Indicator
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}

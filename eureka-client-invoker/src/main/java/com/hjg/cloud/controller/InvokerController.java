@@ -28,6 +28,7 @@ public class InvokerController {
 
     /**
      * 使用http://localhost:8082/router?name=James来访问，可以得到UserController的结果。
+     * 将provider的spring.application.name(注册到eureka的应用名称即service id)，用作地址请求。
      * @param name
      * @return
      */
