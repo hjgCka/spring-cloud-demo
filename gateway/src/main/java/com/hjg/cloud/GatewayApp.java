@@ -16,6 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class GatewayApp {
 
+    /**
+     * 以代码的方式定义路由，还可以在yml配置文件中定义路由。
+     * @param builder
+     * @return
+     */
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
