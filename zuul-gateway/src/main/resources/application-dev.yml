@@ -6,9 +6,21 @@ server:
 zuul:
   ignoredServices: '*'
   routes:
+    uaa-server:
+      path: /services/uaaserver/**
+      serviceId: uaaserver
+    organization:
+      path: /organizationservice/**
+      serviceId: organizationservice
     books:
       path: /mybooks/**
       serviceId: eureka-client
     users:
       path: /myusers/**
       serviceId: eureka-client
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: routes,filters
